@@ -12,14 +12,14 @@ function App() {
       img: "https://bootdey.com/img/Content/avatar/avatar8.png",
     },
     {
-      id: 1,
+      id: 2,
       name: "David Romero",
       role: "QA",
       img: "https://bootdey.com/img/Content/avatar/avatar2.png",
     },
     {
-      id: 1,
-      name: "Karen Steffany Colon ",
+      id: 3,
+      name: "Karen Steffany",
       role: "Frontend Developer",
       img: "https://bootdey.com/img/Content/avatar/avatar3.png",
     },

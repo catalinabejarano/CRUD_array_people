@@ -1,3 +1,4 @@
+
 import PropTypes from "prop-types";
 import { Person } from "./Person";
 import { useState } from "react";
@@ -49,6 +50,29 @@ export const People = ( { people, setPeople } ) => {
     setEditedPerson({ ...personToEdit });
   };
 
+  // Método para guardar los cambios después de editar a una persona
+  const handleSave = (e) => {
+
+    // Prevenir recarga automática del navegador
+    e.preventDefault();
+
+    // Crear un array nuevo reemplazando los datos de la persona editada
+    const updatePeople = people.map(person => person.id === editingId ? editedPerson : person);
+
+    // Actualizar el estado de personas con el array actualizado
+    setPeople(updatePeople);
+
+    setIsEditing(false);
+
+    setEditingId(null);
+
+    setEditedPerson({
+      name: '',
+      role: '',
+      img: ''
+    });
+  }
+
 
   return (
     <div>
@@ -89,7 +113,7 @@ export const People = ( { people, setPeople } ) => {
             <input type="text" name="img" value={editedPerson.img} onChange={handleChange}  required className="form-control" />
           </div>
           <div className="mt-2 text-center">
-            <button type="submit" className="btn btn-primary">Modificar</button>
+            <button type="submit" className="btn btn-primary" onClick={handleSave}>Modificar</button>
           </div>
         </form>
       </div>
