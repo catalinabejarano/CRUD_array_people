@@ -12,7 +12,8 @@ export const Person = ({ id, name, role, img, handleEdit, handleDelete }) => {
           </div>
           <div className='container mb-4'>
             <button className="btn btn-success mx-2" onClick={handleEdit}>Editar</button>
-            <button className="btn btn-danger" onClick={() => handleDelete(id)} data-bs-toggle="modal" data-bs-target="#deleteModal" >Eliminar</button>
+           {/*} <button className="btn btn-danger" onClick={() => handleDelete(id)} data-bs-toggle="modal" data-bs-target="#deleteModal" >Eliminar</button>*/}
+           <button className="btn btn-danger" onClick={handleDelete} data-bs-toggle="modal" data-bs-target="#deleteModal" >Eliminar</button>
           </div>
       </div>
     </div>

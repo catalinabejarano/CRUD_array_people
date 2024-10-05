@@ -114,7 +114,8 @@ export const People = ({ people, setPeople }) => {
                     img={people.img}
                     role={people.role}
                     handleEdit={() => handleEdit(people.id)}
-                    handleDelete={handleDelete}
+                    //handleDelete={handleDelete}
+                    handleDelete={() => handleDelete(people.id)}
                   />
                 </div>
               );
