@@ -98,7 +98,7 @@ export const People = ( { people, setPeople } ) => {
       </div>
       {/* Formulario */}
       <div className='container'>
-        <h2 className='text-center mt-4' >Crear Nuevo Empleado</h2>
+        <h2 className='text-center mt-4' > {isEditing ? 'Actualizar Empleado' : 'Crear Nuevo Empleado'} </h2>
         <form>
           <div>
             <label htmlFor="name">Nombres</label>
@@ -113,7 +113,7 @@ export const People = ( { people, setPeople } ) => {
             <input type="text" name="img" value={editedPerson.img} onChange={handleChange}  required className="form-control" />
           </div>
           <div className="mt-2 text-center">
-            <button type="submit" className="btn btn-primary" onClick={handleSave}>Modificar</button>
+            <button type="submit" className="btn btn-primary" onClick={isEditing ? handleSave : handleCreate }> {isEditing ? 'Actualizar' : 'Crear'} </button>
           </div>
         </form>
       </div>
@@ -125,3 +125,4 @@ People.propTypes = {
   people: PropTypes.array,
   setPeople: PropTypes.func
 }
+
